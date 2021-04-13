@@ -40,7 +40,7 @@ function playRound(playerSelection, computerSelection) {
       return playerWins;
     }
   }
-  return "You didn't input a correct answer. Try again."
+    return ['invalid', "You didn't input a correct answer. Try again."];
 }
 
 function game() {
@@ -48,12 +48,12 @@ function game() {
   let playerScore = 0;
   let computerScore = 0;
 
-  // iterate through 5 rounds of the game, keeping score of the winner
-  for (let i = 0; i < 5; i++) {
+  // iterate through rounds of game. first to 5 ends the game.
+  while (playerScore < 5 && computerScore < 5) {
     // get player selection from prompt. reprompt if no input
     let playerSelection;
     while (!playerSelection) {
-      let input = prompt("Type your selection");
+      let input = prompt("Type your selection (Rock, Paper, or Scissors)");
       //change to lower case
       input = input.toLowerCase();
       //capitalize first letter and concatenate with lower case
