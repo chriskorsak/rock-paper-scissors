@@ -10,11 +10,11 @@ function computerPlay() {
 
 // function that compares computer selection with player selection
 function playRound(playerSelection, computerSelection) {
-  const computerWins = `You lose! ${computerSelection} beats ${playerSelection}`;
-  const playerWins = `You win! ${playerSelection} beats ${computerSelection}`;
+  const computerWins = ['computer', `You lose! ${computerSelection} beats ${playerSelection}`];
+  const playerWins = ['player', `You win! ${playerSelection} beats ${computerSelection}`];
 
   if (playerSelection === computerSelection) {
-    return `Tie! ${playerSelection} equals ${computerSelection}`
+    return ['tie', `Tie! ${playerSelection} equals ${computerSelection}`];
   }
   // player chose rock
   if (playerSelection === 'Rock') {
@@ -43,18 +43,45 @@ function playRound(playerSelection, computerSelection) {
   return "You didn't input a correct answer. Try again."
 }
 
-// get player selection from prompt. reprompt if no input
-let playerSelection;
-while (!playerSelection) {
-  let input = prompt("Type your selection");
-  //change to lower case
-  input = input.toLowerCase();
-  //capitalize first letter and concatenate with lower case
-  playerSelection = input[0].toUpperCase() + input.slice(1);
+function game() {
+  // create score variables for player and computer
+  let playerScore = 0;
+  let computerScore = 0;
+
+  // iterate through 5 rounds of the game, keeping score of the winner
+  for (let i = 0; i < 5; i++) {
+    // get player selection from prompt. reprompt if no input
+    let playerSelection;
+    while (!playerSelection) {
+      let input = prompt("Type your selection");
+      //change to lower case
+      input = input.toLowerCase();
+      //capitalize first letter and concatenate with lower case
+      playerSelection = input[0].toUpperCase() + input.slice(1);
+    }
+
+    // run computer play function and store in variable
+    let computerSelection = computerPlay();
+    let roundOutcome = playRound(playerSelection, computerSelection);
+    // winner of a round gets 1 point
+    if (roundOutcome[0] === 'computer') {
+      computerScore++;
+    } else if (roundOutcome[0] === 'player') {
+      playerScore++;
+    }
+    // print out the winner of each round
+    console.log(`${roundOutcome[1]} \n Computer:${computerScore} Player:${playerScore}`);
+  }
+
+  // // return the winner of the game
+  if (playerScore > computerScore) {
+    return 'You win the game!'
+  } else if (playerScore < computerScore) {
+    return 'Computer Wins the game :('
+  } else {
+    return 'Tie game. Boo.'
+  }
 }
 
-// run computer play function and store in variable
-const computerSelection = computerPlay();
-
-let outcome = playRound(playerSelection, computerSelection);
-console.log(outcome);
+let output = game();
+console.log(output);
