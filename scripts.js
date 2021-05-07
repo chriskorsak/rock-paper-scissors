@@ -70,7 +70,7 @@ function game() {
       playerScore++;
     }
     // print out the winner of each round
-    console.log(`${roundOutcome[1]} \n Computer:${computerScore} Player:${playerScore}`);
+    console.log(`${roundOutcome[1]}\nComputer:${computerScore} Player:${playerScore}`);
   }
 
   // // return the winner of the game
