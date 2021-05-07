@@ -46,9 +46,10 @@ p#message {
   font-size: 1.2em;
 }
 
-div.scoreSection {
+div#scoreSection {
   display: flex;
   justify-content: center;
+  visibility: hidden;
 }
 
 .scoreParent {
