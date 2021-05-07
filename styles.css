@@ -67,17 +67,17 @@ div.scoreSection {
   margin: 0 auto;
 }
 
-.playerSelection {
+#playerSelection {
   display: flex;
   justify-content: space-between;
 }
 
-.playerSelection > img {
+#playerSelection > img {
   width: 33%;  
   border: 5px solid transparent;
   border-radius: 5px;
 }
 
-.playerSelection > img:hover {
+#playerSelection > img:hover {
   border: 5px solid #fff;
 }
