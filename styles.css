@@ -30,6 +30,22 @@ h1 {
   margin: .25em;
 }
 
+button#startGame {
+  background-color: #fff;
+  color: #1d1d1d;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+button#startGame:hover {
+  background-color: #ddd;
+}
+
+p#message {
+  font-size: 1.2em;
+}
+
 div.scoreSection {
   display: flex;
   justify-content: center;
@@ -51,17 +67,17 @@ div.scoreSection {
   margin: 0 auto;
 }
 
-#playerSelection {
+.playerSelection {
   display: flex;
   justify-content: space-between;
 }
 
-#playerSelection > img {
+.playerSelection > img {
   width: 33%;  
   border: 5px solid transparent;
   border-radius: 5px;
 }
 
-#playerSelection > img:hover {
+.playerSelection > img:hover {
   border: 5px solid #fff;
 }
