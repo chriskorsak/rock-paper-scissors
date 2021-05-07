@@ -83,5 +83,5 @@ function game() {
   }
 }
 
-let output = game();
-console.log(output);
+// let output = game();
+// console.log(output);
