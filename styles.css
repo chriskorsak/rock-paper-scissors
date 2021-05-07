@@ -1,10 +1,49 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&family=VT323&display=swap');
+
+* {
+  /* border: solid white 1px; */
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1d1d1d;
+  color: #fff;
+  font-family: 'Ubuntu', sans-serif;
+  min-height: 100vh;
+}
+
 header {
   text-align: center;
 }
 
-div.score {
+h1,
+h2,
+h3 {
+  font-family: 'VT323', monospace;
+}
+
+h1 {
+  font-size: 5em;
+  text-transform: uppercase;
+  color: #d8d228;
+  margin: .25em;
+}
+
+div.scoreSection {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+}
+
+.scoreParent {
+  margin: 0 10%;
+  font-size: 3em;
+}
+
+.score {
+  color: #d8d228;
+  font-family: 'VT323', monospace;
+  font-size: 150%;
 }
 
 .container {
@@ -18,11 +57,11 @@ div.score {
 }
 
 #playerSelection > img {
-  max-width: 350px;  
+  width: 33%;  
   border: 5px solid transparent;
   border-radius: 5px;
 }
 
 #playerSelection > img:hover {
-  border: 5px solid #18454a;
+  border: 5px solid #fff;
 }
