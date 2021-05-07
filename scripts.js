@@ -31,39 +31,49 @@ function computerPlay() {
 
 // function that compares computer selection with player selection
 function playRound(playerSelection) {
+  //player selection generated from click event
   playerSelection = playerSelection.target.id;
-  let computerSelection = computerPlay();
-  const computerWins = ['computer', `You lose! ${computerSelection} beats ${playerSelection}`];
-  const playerWins = ['player', `You win! ${playerSelection} beats ${computerSelection}`];
+  const computerSelection = computerPlay();
+  console.log(playerSelection, computerSelection)
+
+  const computerWins = `You lose! ${computerSelection} beats ${playerSelection}`;
+  const playerWins = `You win! ${playerSelection} beats ${computerSelection}`;
+  const tie = `Tie! ${playerSelection} equals ${computerSelection}`
 
   if (playerSelection === computerSelection) {
-    console.log(['tie', `Tie! ${playerSelection} equals ${computerSelection}`]);
+    message.textContent = tie;
+    return tie;
   }
   // player chose rock
-  if (playerSelection === 'Rock') {
-    if (computerSelection === 'Paper') {
-      return computerWins;
+  if (playerSelection === 'rock') {
+    if (computerSelection === 'paper') {
+      message.textContent = computerWins;
+      // return computerWins;
     } else {
-      return playerWins;
+      message.textContent = playerWins;
+      // return playerWins;
     }
   }
   // player chose paper
-  if (playerSelection === 'Paper') {
-    if (computerSelection === 'Scissors') {
-      return computerWins;
+  if (playerSelection === 'paper') {
+    if (computerSelection === 'scissors') {
+      message.textContent = computerWins;
+      // return computerWins;
     } else {
-      return playerWins;
+      message.textContent = playerWins;
+      // return playerWins;
     }
   }
   // player chose scissors
-  if (playerSelection === 'Scissors') {
-    if (computerSelection === 'Rock') {
-      return computerWins;
+  if (playerSelection === 'scissors') {
+    if (computerSelection === 'rock') {
+      message.textContent = computerWins;
+      // return computerWins;
     } else {
-      return playerWins;
+      message.textContent = playerWins;
+      // return playerWins;
     }
   }
-    return ['invalid', "You didn't input a correct answer. Try again."];
 }
 
 function game() {
