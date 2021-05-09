@@ -19,8 +19,9 @@ startGame.addEventListener('click', game);
 
 //FUNCTIONS
 function game() {
-  playerScore.textContent = 0;
-  computerScore.textContent = 0;
+  //initialize score at start of game
+  pScore = 0;
+  cScore = 0;
 
   //hide start game button and display scoreboard
   startGame.style.visibility = 'hidden';
@@ -58,32 +59,36 @@ function game() {
     if (playerSelection === 'rock') {
       if (computerSelection === 'paper') {
         message.textContent = computerWins;
-        // return computerWins;
+        cScore++;
       } else {
         message.textContent = playerWins;
-        // return playerWins;
+        pScore++;
       }
     }
     // player chose paper
     if (playerSelection === 'paper') {
       if (computerSelection === 'scissors') {
         message.textContent = computerWins;
-        // return computerWins;
+        cScore++;
       } else {
         message.textContent = playerWins;
-        // return playerWins;
+        pScore++;
       }
     }
     // player chose scissors
     if (playerSelection === 'scissors') {
       if (computerSelection === 'rock') {
         message.textContent = computerWins;
-        // return computerWins;
+        cScore++;
       } else {
         message.textContent = playerWins;
-        // return playerWins;
+        pScore++;
       }
     }
+
+    //update scoreboard after playing a round
+    playerScore.textContent = pScore;
+    computerScore.textContent = cScore;
   }
 
 
