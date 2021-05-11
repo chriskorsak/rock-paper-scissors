@@ -1,6 +1,7 @@
 # _Rock Paper Scissors_
 
-#### _Play the game rock paper scissors with a computer! First one to 5 points wins. 05/2021_
+#### Play the game rock paper scissors with a computer! First one to 5 points wins. 
+#### _05/2021_
 
 #### By _**Chris Korsak**_
 
