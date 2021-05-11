@@ -43,7 +43,7 @@ button#startGame:hover {
 
 p#message {
   font-size: 1.5em;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 div#scoreSection {
@@ -69,20 +69,21 @@ div#scoreSection {
   margin: 0 auto;
 }
 
-#playerSelection {
+#playerSelectionSection {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   opacity: 50%;
 }
 
-#playerSelection > img {
-  width: 33%;  
+#playerSelectionSection > img {
+  width: 33%;
+  /* height: auto; */
   border: 5px solid transparent;
   border-radius: 5px;
 }
 
-#playerSelection > img:hover {
+#playerSelectionSection > img:hover {
   border: 5px solid #fff;
   cursor: pointer;
 }
@@ -98,7 +99,6 @@ div#scoreSection {
   .scoreParent {
     font-size: 2.5em;
   }
-  
   .container {
     width: 100%;
   }
