@@ -13,7 +13,7 @@ let computerScore = document.getElementById('computerScore');
 //Player Selection Section
 let playerSelectionSection = document.getElementById('playerSelection');
   
-//initialize score at start of game
+//keep track of score
 let pScore = 0;
 let cScore = 0;
 
@@ -30,8 +30,8 @@ function startGame() {
   playerScore.textContent = pScore;
   computerScore.textContent = cScore;
 
-  // clear out message
-  message.textContent = 'First to 5 wins. Go!';
+  // reset message
+  message.textContent = 'First to 5 points wins. Go!';
 
   //hide start game button and display scoreboard
   startGame_button.style.visibility = 'hidden';
@@ -39,6 +39,8 @@ function startGame() {
 
   //add click event to images
   playerSelectionSection.addEventListener('click', playRound);
+  //increase button opacity
+  playerSelectionSection.style.opacity = '100%';
 }
 
 // function that randomly returns either 'rock', 'paper', or 'scissors'
@@ -57,13 +59,13 @@ function playRound(playerSelection) {
   playerSelection = playerSelection.target.id;
   const computerSelection = computerPlay();
 
-  const computerWins = `You lose! ${computerSelection} beats ${playerSelection}`;
-  const playerWins = `You win! ${playerSelection} beats ${computerSelection}`;
-  const tie = `Tie! ${playerSelection} equals ${computerSelection}`
+  const computerWins = `You lose! ${computerSelection.toUpperCase()} beats \n ${playerSelection.toUpperCase()}.`;
+  const playerWins = `You win! ${playerSelection.toUpperCase()} beats ${computerSelection.toUpperCase()}.`;
+  const tie = `Tie! ${playerSelection.toUpperCase()} equals ${computerSelection.toUpperCase()}.`;
 
   if (playerSelection === computerSelection) {
     message.textContent = tie;
-    return tie;
+    return;
   }
   // player chose rock
   if (playerSelection === 'rock') {
@@ -111,16 +113,18 @@ function endGame() {
   if (pScore > cScore) {
     message.textContent = 'You win the game!';
   } else if (pScore < cScore) {
-    message.textContent = 'Computer Wins the game. Try again.';
+    message.textContent = 'Computer wins the game. Try again.';
   } else {
     message.textContent = 'Tie game. Peace on earth. Everyone is a winner!';
   }
 
-  //hide start game button and display scoreboard
+  //show game button
   startGame_button.style.visibility = 'visible';
-  // scoreSection.style.visibility = 'hidden';
   
   //remove click event to images
   playerSelectionSection.removeEventListener('click', playRound);
+
+  //lower img/button opacity
+  playerSelectionSection.style.opacity = '50%';
 }
     
