@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&family=VT323&display=swap');
 
 * {
-  /* border: 1px solid white; */
+  border: 1px solid white;
   box-sizing: border-box;
 }
 
@@ -73,8 +73,8 @@ div#scoreSection {
 
 #playerSelectionSection {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
   opacity: 50%;
 }
 
