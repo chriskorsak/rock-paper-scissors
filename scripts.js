@@ -42,7 +42,7 @@ function startGame() {
   //add click event to images
   playerSelectionSection.addEventListener('click', playRound);
   //increase button opacity
-  playerSelectionSection.style.opacity = '100%';
+  playerSelectionSection.style.opacity = '1';
 }
 
 // function that randomly returns either 'rock', 'paper', or 'scissors'
@@ -113,6 +113,6 @@ function endGame() {
   //remove click event to images
   playerSelectionSection.removeEventListener('click', playRound);
   //lower img/button opacity
-  playerSelectionSection.style.opacity = '50%';
+  playerSelectionSection.style.opacity = '.5';
 }
     

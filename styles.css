@@ -75,7 +75,7 @@ div#scoreSection {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  opacity: 50%;
+  opacity: .5;
 }
 
 #playerSelectionSection > img {
